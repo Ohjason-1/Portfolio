@@ -1,18 +1,15 @@
-### Hi there 👋
+# 👋 Hi, I'm Jason Oh[legal name: Jaewon Oh] | iOS Developer 🚀
 
-Welcome to my Github Profile!
+Passionate iOS developer with hands-on experience building high-quality, user-centric applications. I've worked on several iOS projects, honing my skills in **Swift, SwiftUI, UIKit**, and integrating backend services efficiently. I also hold multiple certifications in **iOS development, backend technologies, and modern frameworks** like **React, Node.js, and Firebase**.
 
-<!--
-**Ohjason-1/Ohjason-1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## 🔥 What I Bring to the Table
+- ✅ **iOS App Development**: Swift, SwiftUI, UIKit,   
+- ✅ **Backend Development**: Node.js, Firebase, RESTful APIs,   
+- ✅ **Cross-Platform Skills**: React, React Native  
+- ✅ **Database Management**: PostgreSQL, Core Data  
+- ✅ **Software Engineering Best Practices**: TDD, Agile, Clean Architecture  
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🏆 Certifications & Achievements  
+- 📜 Certified iOS Developer  
+- 📜 Backend Development Certification  
+- 📜 Advanced Swift & SwiftUI Certification  
