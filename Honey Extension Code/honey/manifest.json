@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Piece of Honey",
+    "version": "1.0.0",
+    "description": "How to be a sly dog",
+    "permissions": [
+        "activeTab",
+        "cookies",
+        "tabs",
+        "scripting",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+        "matches": ["*://*.newegg.com/*"],
+        "css": ["content.css"],
+        "js": ["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+    "service_worker": "background.js"
+    }
+}
