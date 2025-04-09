@@ -4,9 +4,9 @@ Passionate iOS developer with hands-on experience building high-quality, user-ce
 
 ## 🔥 What I Bring to the Table
 - ✅ **iOS App Development**: Swift, SwiftUI, UIKit,   
-- ✅ **Backend Development**: Node.js, Firebase, RESTful APIs,   
-- ✅ **Cross-Platform Skills**: React, React Native  
-- ✅ **Database Management**: PostgreSQL, Core Data  
+- ✅ **Backend Development**: Node.js, Firebase, RESTful APIs, Python, JavsScript  
+- ✅ **Cross-Platform Skills**: React
+- ✅ **Database Management**: MySQL, MongoDB
 - ✅ **Software Engineering Best Practices**: TDD, Agile, Clean Architecture  
 
 ## 🏆 Certifications & Achievements  
