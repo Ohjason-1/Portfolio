@@ -1,0 +1,147 @@
+//
+//  DeveloperPreview.swift
+//  Airbnb2
+//
+//  Created by Jaewon Oh on 4/10/25.
+//
+
+import Foundation
+
+class DeveloperPreview {
+    static let shared = DeveloperPreview()
+    var listings: [Listing] = [
+        .init(
+            id: NSUUID().uuidString,
+            ownerUid: NSUUID().uuidString,
+            ownerName: "John Smith",
+            ownerImageUrl: "male-profile-photo",
+            numberOfBedrooms: 4,
+            numberOfBathrooms: 3,
+            numberOfGuests: 4,
+            numberOfBeds: 4,
+            pricePerNight: 567,
+            latitude: 25.7850,
+            imageURLs: ["Image 1", "Image 2", "Image 3", "Image 4"],
+            longitude: -80.1936,
+            address: "124 Main St",
+            city: "Miami",
+            state: "Florida",
+            title: "Miami Villa",
+            rating: 4.86,
+            features: [.selfCheckIn, .superHost],
+            amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv],
+            type: .villa
+        ),
+        .init(
+            id: NSUUID().uuidString,
+            ownerUid: NSUUID().uuidString,
+            ownerName: "John Smith",
+            ownerImageUrl: "male-profile-photo",
+            numberOfBedrooms: 4,
+            numberOfBathrooms: 3,
+            numberOfGuests: 4,
+            numberOfBeds: 4,
+            pricePerNight: 567,
+            latitude: 25.7850,
+            imageURLs: ["Image 1", "Image 2", "Image 3", "Image 4"],
+            longitude: -80.1936,
+            address: "124 Main St",
+            city: "Miami",
+            state: "Florida",
+            title: "Miami Villa",
+            rating: 4.86,
+            features: [.selfCheckIn, .superHost],
+            amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv],
+            type: .villa
+        ),
+        .init(
+            id: NSUUID().uuidString,
+            ownerUid: NSUUID().uuidString,
+            ownerName: "John Smith",
+            ownerImageUrl: "male-profile-photo",
+            numberOfBedrooms: 4,
+            numberOfBathrooms: 3,
+            numberOfGuests: 4,
+            numberOfBeds: 4,
+            pricePerNight: 567,
+            latitude: 25.7850,
+            imageURLs: ["Image 1", "Image 2", "Image 3", "Image 4"],
+            longitude: -80.1936,
+            address: "124 Main St",
+            city: "Miami",
+            state: "Florida",
+            title: "Miami Villa",
+            rating: 4.86,
+            features: [.selfCheckIn, .superHost],
+            amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv],
+            type: .villa
+        ),
+        .init(
+            id: NSUUID().uuidString,
+            ownerUid: NSUUID().uuidString,
+            ownerName: "John Smith",
+            ownerImageUrl: "male-profile-photo",
+            numberOfBedrooms: 4,
+            numberOfBathrooms: 3,
+            numberOfGuests: 4,
+            numberOfBeds: 4,
+            pricePerNight: 567,
+            latitude: 25.7850,
+            imageURLs: ["Image 1", "Image 2", "Image 3", "Image 4"],
+            longitude: -80.1936,
+            address: "124 Main St",
+            city: "Miami",
+            state: "Florida",
+            title: "Miami Villa",
+            rating: 4.86,
+            features: [.selfCheckIn, .superHost],
+            amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv],
+            type: .villa
+        ),
+        .init(
+            id: NSUUID().uuidString,
+            ownerUid: NSUUID().uuidString,
+            ownerName: "John Smith",
+            ownerImageUrl: "male-profile-photo",
+            numberOfBedrooms: 4,
+            numberOfBathrooms: 3,
+            numberOfGuests: 4,
+            numberOfBeds: 4,
+            pricePerNight: 567,
+            latitude: 25.7850,
+            imageURLs: ["Image 1", "Image 2", "Image 3", "Image 4"],
+            longitude: -80.1936,
+            address: "124 Main St",
+            city: "Miami",
+            state: "Florida",
+            title: "Miami Villa",
+            rating: 4.86,
+            features: [.selfCheckIn, .superHost],
+            amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv],
+            type: .villa
+        ),
+        .init(
+            id: NSUUID().uuidString,
+            ownerUid: NSUUID().uuidString,
+            ownerName: "John Smith",
+            ownerImageUrl: "male-profile-photo",
+            numberOfBedrooms: 4,
+            numberOfBathrooms: 3,
+            numberOfGuests: 4,
+            numberOfBeds: 4,
+            pricePerNight: 567,
+            latitude: 25.7850,
+            imageURLs: ["Image 1", "Image 2", "Image 3", "Image 4"],
+            longitude: -80.1936,
+            address: "124 Main St",
+            city: "Miami",
+            state: "Florida",
+            title: "Miami Villa",
+            rating: 4.86,
+            features: [.selfCheckIn, .superHost],
+            amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv],
+            type: .villa
+        )
+        
+    ]
+}

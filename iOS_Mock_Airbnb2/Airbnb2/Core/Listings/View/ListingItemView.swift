@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListingItemView: View {
+    let listing: Listing
     var body: some View {
         VStack(spacing: 8) {
             //images
@@ -18,7 +19,7 @@ struct ListingItemView: View {
             HStack(alignment: .top) {
                 //details
                 VStack(alignment: .leading) {
-                    Text("Miami, Florida")
+                    Text("\(listing.city), \(listing.state)")
                         .fontWeight(.semibold)
                         .foregroundStyle(.black)
                     Text("12 mi away")
@@ -42,9 +43,10 @@ struct ListingItemView: View {
             }
             .font(.footnote)
         }
+        .padding(8)
     }
 }
 
 #Preview {
-    ListingItemView()
+    ListingItemView(listing: DeveloperPreview.shared.listings[0])
 }
