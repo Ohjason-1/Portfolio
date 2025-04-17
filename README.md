@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Jason Oh[legal name: Jaewon Oh] | iOS Developer 🚀
 
-Passionate iOS developer with hands-on experience building high-quality, user-centric applications. I've worked on several iOS projects, honing my skills in **Swift, SwiftUI, UIKit**, and integrating backend services efficiently. I also hold multiple certifications in **iOS development, backend technologies, and modern frameworks** like **React, Node.js, and Firebase**.
+Passionate iOS developer with hands-on experience building high-quality, user-centric applications. I've worked on several iOS projects, honing my skills in **Swift, SwiftUI, UIKit**, and integrating backend services efficiently. I also hold multiple certifications in **iOS development, backend technologies, and python. I am also proficient in modern frameworks** like **React, Node.js, and Firebase**.
 
 ## 🔥 What I Bring to the Table
 - ✅ **iOS App Development**: Swift, SwiftUI, UIKit,   
