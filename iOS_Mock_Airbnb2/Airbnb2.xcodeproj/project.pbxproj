@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5306E7B02DA91179003D71D7 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5306E7AF2DA91179003D71D7 /* Regions.swift */; };
+		5315226A2DB0EE2300EE8DA8 /* ListingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531522692DB0EE2300EE8DA8 /* ListingMapView.swift */; };
+		5315226C2DB189D800EE8DA8 /* ListingMapPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315226B2DB189D800EE8DA8 /* ListingMapPreviewView.swift */; };
 		537A8DB92D9FDA3F00AC9E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 537A8DB32D9FDA3F00AC9E12 /* Preview Assets.xcassets */; };
 		537A8DBA2D9FDA3F00AC9E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 537A8DB62D9FDA3F00AC9E12 /* Assets.xcassets */; };
 		537A8DBB2D9FDA3F00AC9E12 /* Airbnb2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537A8DB52D9FDA3F00AC9E12 /* Airbnb2App.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5306E7AF2DA91179003D71D7 /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
+		531522692DB0EE2300EE8DA8 /* ListingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingMapView.swift; sourceTree = "<group>"; };
+		5315226B2DB189D800EE8DA8 /* ListingMapPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingMapPreviewView.swift; sourceTree = "<group>"; };
 		537A8D7E2D9FD96100AC9E12 /* Airbnb2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		537A8DB32D9FDA3F00AC9E12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		537A8DB52D9FDA3F00AC9E12 /* Airbnb2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airbnb2App.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				53E73BB52DA7AC080080F647 /* DeveloperPreview.swift */,
+				5306E7AF2DA91179003D71D7 /* Regions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -157,8 +164,8 @@
 		537A8DBF2D9FDB1600AC9E12 /* Listings */ = {
 			isa = PBXGroup;
 			children = (
-				53E73BB22DA7A74D0080F647 /* View */,
 				53E73BB12DA7A71E0080F647 /* Model */,
+				53E73BB22DA7A74D0080F647 /* View */,
 			);
 			path = Listings;
 			sourceTree = "<group>";
@@ -223,6 +230,8 @@
 			children = (
 				53DC9ED42DA3C9EC00ED31FE /* ListingItemView.swift */,
 				539A1CCC2DA5BE03006F7948 /* ListingDetailView.swift */,
+				531522692DB0EE2300EE8DA8 /* ListingMapView.swift */,
+				5315226B2DB189D800EE8DA8 /* ListingMapPreviewView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,10 +338,12 @@
 				539A1CD12DA5BE91006F7948 /* ListingImageCarouselView.swift in Sources */,
 				53E73BAA2DA79B210080F647 /* ProfileView.swift in Sources */,
 				53E73BAC2DA79D2C0080F647 /* ProfileOptionRowView.swift in Sources */,
+				5315226C2DB189D800EE8DA8 /* ListingMapPreviewView.swift in Sources */,
 				539A1CD32DA5DBB3006F7948 /* DestinationSearchView.swift in Sources */,
 				537A8DBB2D9FDA3F00AC9E12 /* Airbnb2App.swift in Sources */,
 				53DC9ED52DA3C9EC00ED31FE /* ListingItemView.swift in Sources */,
 				53E73BBB2DA7B80F0080F647 /* ExploreViewModel.swift in Sources */,
+				5306E7B02DA91179003D71D7 /* Regions.swift in Sources */,
 				537A8DC62D9FDC8800AC9E12 /* ExploreView.swift in Sources */,
 				53E73BB42DA7A77D0080F647 /* Listing.swift in Sources */,
 				53E73BAE2DA7A1060080F647 /* WishlistView.swift in Sources */,
@@ -341,6 +352,7 @@
 				537A8DBC2D9FDA3F00AC9E12 /* ContentView.swift in Sources */,
 				53E73BB02DA7A2930080F647 /* MainTabView.swift in Sources */,
 				53E73BB62DA7AC080080F647 /* DeveloperPreview.swift in Sources */,
+				5315226A2DB0EE2300EE8DA8 /* ListingMapView.swift in Sources */,
 				53E73BBD2DA7B8530080F647 /* ExploreService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
