@@ -8,37 +8,20 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @ObservedObject var authManager: AuthManager
+    @State private var showLogin = false
+    
+    init(authManager: AuthManager) {
+        self.authManager = authManager
+    }
+    
     var body: some View {
         VStack {
             // profile login view
-            VStack(alignment: .leading, spacing: 32) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Profile")
-                        .font(.largeTitle)
-                        .fontWeight(.semibold)
-                    Text("Log in to start planning your next trip")
-                }
-                
-                
-                Button {
-                    print("log in")
-                } label: {
-                    Text("Log in")
-                        .foregroundStyle(.white)
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .frame(width: 360, height: 48)
-                        .background(.pink)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                }
-                HStack {
-                    Text("Don't have an account?")
-                    
-                    Text("Sign up")
-                        .fontWeight(.semibold)
-                        .underline()
-                }
-                .font(.caption)
+            if authManager.userSessionId == nil {
+                ProfileLoginView(showLogin: $showLogin)
+            } else {
+                UserProfileHeaderView()
             }
             
             VStack(spacing: 24) {
@@ -47,12 +30,28 @@ struct ProfileView: View {
                 ProfileOptionRowView(imageName: "questionmark.circle", title: "Visit the help center")
             }
             .padding(.vertical)
+            
+            if authManager.userSessionId != nil {
+                Button {
+                    authManager.signout()
+                } label: {
+                    Text("Log Out")
+                        .underline()
+                        .foregroundStyle(.black)
+                        .font(.subheadline)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            
         }
+        .sheet(isPresented: $showLogin, content: {
+            LoginView(authManager: authManager)
+        })
         .padding()
         
     }
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(authManager: AuthManager(service: MockAuthService()))
 }

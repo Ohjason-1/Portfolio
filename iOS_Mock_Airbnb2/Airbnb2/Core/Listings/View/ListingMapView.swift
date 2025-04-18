@@ -16,12 +16,16 @@ struct ListingMapView: View {
     
     init(listings: [Listing], center: CLLocationCoordinate2D = .losAngeles) {
         self.listings = listings
-        let coordinateRegion = MKCoordinateRegion(center: center, latitudinalMeters: 5000, longitudinalMeters: 5000)
+        let coordinateRegion = MKCoordinateRegion(
+            center: center,
+            latitudinalMeters: 50000,
+            longitudinalMeters: 50000
+        )
         self._cameraPosition = State(initialValue: .region(coordinateRegion))
     }
     
     var body: some View {
-        ZStack(alignment: .topTrailing) {
+        ZStack(alignment: .topLeading) {
             ZStack(alignment: .bottom) {
                 Map(position: $cameraPosition, selection: $selectedListing) {
                     ForEach(listings, id: \.self) { listing in
@@ -34,8 +38,6 @@ struct ListingMapView: View {
                         .onTapGesture { showDetails.toggle() }
                 }
             }
-            
-            
             Button {
                 dismiss()
             } label: {
@@ -51,13 +53,13 @@ struct ListingMapView: View {
                     .padding(.leading, 32)
             }
             
-            
         }
         .fullScreenCover(isPresented: $showDetails, content: {
             if let selectedListing {
                 ListingDetailView(listing: selectedListing)
             }
         })
+        
     }
 }
 

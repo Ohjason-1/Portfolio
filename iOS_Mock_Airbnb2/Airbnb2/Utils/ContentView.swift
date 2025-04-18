@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let authManager: AuthManager
+    
+    init(authManager: AuthManager) {
+        self.authManager = authManager
+    }
+    
     var body: some View {
-        MainTabView()
+        MainTabView(authManager: authManager)
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(authManager: AuthManager(service: MockAuthService()))
 }
