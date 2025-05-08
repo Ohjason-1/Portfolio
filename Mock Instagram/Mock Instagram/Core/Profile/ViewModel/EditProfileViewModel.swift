@@ -42,6 +42,7 @@ class EditProfileViewModel: ObservableObject {
         guard let data = try? await item.loadTransferable(type: Data.self) else { return }
         guard let uiImage = UIImage(data: data) else { return }
         self.uiImage = uiImage
+        self.profileImage = Image(uiImage: uiImage)
     }
     
     func updateUserData() async throws {
@@ -66,7 +67,7 @@ class EditProfileViewModel: ObservableObject {
         }
         
         if !data.isEmpty {
-            try await Firestore.firestore().collection("users").document(user.id).updateData(data)
+            try await FirebaseConstants.UsersCollection.document(user.id).updateData(data)
         }
     }
 }

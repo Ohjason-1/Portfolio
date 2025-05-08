@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct FeedView: View {
+    @StateObject var viewModel = FeedViewModel()
+    
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -18,6 +21,8 @@ struct FeedView: View {
                 }
                 .padding(.top, 8)
             }
+            .navigationTitle("Feed")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image("logo")

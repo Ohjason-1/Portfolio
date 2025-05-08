@@ -9,9 +9,14 @@ import SwiftUI
 
 struct FeedCell: View {
     @ObservedObject var viewModel: FeedCellViewModel
+    @State private var showComments = false
     
     private var post: Post {
         return viewModel.post
+    }
+    
+    private var didLike: Bool {
+        return post.didLike ?? false
     }
     
     init(post: Post) {
@@ -45,14 +50,15 @@ struct FeedCell: View {
             // action buttons
             HStack(spacing: 16) {
                 Button {
-                    print("Like post")
+                    handleLikeTapped()
                 } label: {
-                    Image(systemName: "heart")
+                    Image(systemName: didLike ? "heart.fill" : "heart")
                         .imageScale(.large)
+                        .foregroundStyle(didLike ? .red: .black)
                 }
                 
                 Button {
-                    print("Comment on post")
+                    showComments.toggle()
                 } label: {
                     Image(systemName: "bubble.right")
                         .imageScale(.large)
@@ -73,12 +79,14 @@ struct FeedCell: View {
             .foregroundColor(.black)
             // likes label
             
-            Text("\(post.likes) likes")
-                .font(.footnote)
-                .fontWeight(.semibold)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 10)
-                .padding(.top, 1)
+            if post.likes > 0 {
+                Text("\(post.likes) likes")
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 10)
+                    .padding(.top, 1)
+            }
             
             // caption label
             
@@ -91,20 +99,25 @@ struct FeedCell: View {
             .padding(.leading, 10)
             .padding(.top, 1)
             
-            Text("6h ago")
+            Text(post.timestamp.timestampString())
                 .font(.footnote)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 10)
                 .padding(.top, 1)
                 .foregroundColor(.gray)
         }
+        .sheet(isPresented: $showComments, content: {
+            CommentsView(post: post)
+        })
     }
     
     private func handleLikeTapped() {
-        if post.didLike {
-            
-        } else {
-            
+        Task {
+            if didLike {
+                try await viewModel.unlike()
+            } else {
+                try await viewModel.like()
+            }
         }
     }
 }

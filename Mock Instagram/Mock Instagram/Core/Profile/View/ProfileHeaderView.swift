@@ -8,8 +8,57 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-    let user: User
+    @ObservedObject var viewModel: ProfileViewModel
     @State private var showEditProfile = false
+    
+    private var user: User {
+        return viewModel.user
+    }
+    
+    private var isFollowed: Bool {
+        return user.isFollowed ?? false
+    }
+    
+    private var stats: UserStats {
+        return user.stats ?? .init(followingCount: 0, followersCount: 0, postsCount: 0)
+    }
+    
+    private var buttonTitle: String {
+        if user.isCurrentUser {
+            return "Edit Profile"
+        } else {
+            return isFollowed ? "Following" : "Follow"
+        }
+    }
+    
+    private var buttonBackgroundColor: Color {
+        if user.isCurrentUser || isFollowed {
+            return .white
+        } else {
+            return Color(.systemBlue)
+        }
+    }
+    
+    private var buttonForegroundColor: Color {
+        if user.isCurrentUser || isFollowed {
+            return .black
+        } else {
+            return .white
+        }
+    }
+    
+    private var buttonBorderdColor: Color {
+        if user.isCurrentUser || isFollowed {
+            return .gray
+        } else {
+            return .clear
+        }
+    }
+    
+    init(user: User) {
+        self.viewModel = ProfileViewModel(user: user)
+    }
+    
     var body: some View {
         VStack(spacing: 10) {
                 // pic and stats
@@ -19,11 +68,16 @@ struct ProfileHeaderView: View {
                     Spacer()
                     
                     HStack(spacing: 8) {
-                        UserStackView(value: 3, title: "Posts")
+                        UserStackView(value: stats.postsCount, title: "Posts")
                         
-                        UserStackView(value: 12, title: "Followers")
+                        NavigationLink(value: UserListConfig.followers(uid: user.id)) {
+                            UserStackView(value: stats.followersCount, title: "Followers")
+                        }
                         
-                        UserStackView(value: 24, title: "Following")
+                        
+                        NavigationLink(value: UserListConfig.following(uid: user.id)) {
+                            UserStackView(value: stats.followingCount, title: "Following")
+                        }
                     }
                 }
                 .padding(.horizontal)
@@ -51,24 +105,39 @@ struct ProfileHeaderView: View {
                     if user.isCurrentUser {
                         showEditProfile.toggle()
                     } else {
-                        print("Follow user")
+                        handleFollowTapped()
                     }
                 } label: {
-                    Text(user.isCurrentUser ? "Edit Profile" : "Follow")
+                    Text(buttonTitle)
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .frame(width: 360, height: 32)
-                        .foregroundStyle(user.isCurrentUser ? .black : .white)
-                        .background(user.isCurrentUser ? .white : Color(.systemBlue))
+                        .foregroundStyle(buttonForegroundColor)
+                        .background(buttonBackgroundColor)
                         .cornerRadius(6)
-                        .overlay(RoundedRectangle(cornerRadius: 6).stroke(user.isCurrentUser ? .gray : .clear, lineWidth: 1)
+                        .overlay(RoundedRectangle(cornerRadius: 6).stroke(buttonBorderdColor, lineWidth: 1)
                         )
                 }
                 
                 Divider()
             }
+        .navigationDestination(for: UserListConfig.self, destination: { config in
+            UserListView(config: config)
+        })
+        .onAppear() {
+            viewModel.fetchUserStats()
+            viewModel.checkIfUserIsFollowed()
+        }
         .fullScreenCover(isPresented: $showEditProfile) {
             EditProfileView(user: user)
+        }
+    }
+    
+    func handleFollowTapped() {
+        if isFollowed {
+            viewModel.unfollow()
+        } else {
+            viewModel.follow()
         }
     }
 }
