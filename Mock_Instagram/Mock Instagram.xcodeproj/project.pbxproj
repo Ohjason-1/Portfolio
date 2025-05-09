@@ -173,7 +173,6 @@
 				537ADA7C2DBA2301004064AC /* Services */,
 				53AF8F8C2DCC1B1800CDCA70 /* Utils */,
 				53A9B76B2DC214EF00C4CE15 /* GoogleService-Info.plist */,
-				537ADA742DBA22FA004064AC /* Assets.xcassets */,
 				537ADA762DBA22FA004064AC /* Mock_Instagram.entitlements */,
 			);
 			path = "Mock Instagram";
@@ -480,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				53AF8F8D2DCC1B2900CDCA70 /* Constants.swift */,
+				537ADA742DBA22FA004064AC /* Assets.xcassets */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
